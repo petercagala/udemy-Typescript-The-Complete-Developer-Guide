@@ -14,6 +14,7 @@
 /.idea/
 *.ini
 /Section-1-Getting-Started-with-TypeScript/.idea/
+/Section-1-Getting-Started-with-TypeScript/node_modules/
 
 # Package Files #
 *.jar
