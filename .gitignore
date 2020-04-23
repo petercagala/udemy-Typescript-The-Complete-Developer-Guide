@@ -16,6 +16,9 @@
 /Section-1-Getting-Started-with-TypeScript/.idea/
 /Section-1-Getting-Started-with-TypeScript/node_modules/
 
+#TypeScript
+*.js
+
 # Package Files #
 *.jar
 *.war
