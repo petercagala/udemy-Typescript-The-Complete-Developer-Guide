@@ -20,9 +20,13 @@ axios.get(url)
         const title: string = myData.title;
         const completed: boolean = myData.completed;
 
-        console.log(`
+        logTodo(id, title, completed);
+    });
+
+const logTodo = (id: number, title: string, completed: boolean) => {
+    console.log(`
             id = ${id},
             title = ${title},
             completed = ${completed}
         `);
-    });
+};
