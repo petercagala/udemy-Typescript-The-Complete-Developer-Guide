@@ -41,3 +41,30 @@ const throwErrorNever = (message: string): never => {
     throw new Error(message);
     // return "dzfzbzd";
 }
+
+const todaysWeeather: {date: Date; weather: string} = {
+    date: new Date(),
+    weather: "fine weather"
+};
+
+const logWeather1 = (forecast: {date: Date; weather: string}): void => {
+    console.log(forecast.date);
+    console.log(forecast.weather);
+};
+
+/**
+ * !!! Toto je fakt krasna funkcia !!!
+ * So syntaxou ES6 / JS2015
+ * Mozeme mat vstupny objekt velky ako prasa, ale v skutocnosti potrebujeme z neho vytiahnut len nieco
+ * Do metody vstupi cely objekt, ale my potrebjeme len date
+ * @param forecast
+ */
+const logWeather2 = ({date,
+                         // weather
+                     }: {date: Date; weather: string}): void => {
+    console.log(date);
+    // console.log(weather);
+};
+
+logWeather1(todaysWeeather);
+logWeather2(todaysWeeather);
