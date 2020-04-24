@@ -22,3 +22,22 @@ const multiplyFunction = function(a: number, b: number): number {
 // const multiplyFunction: (a: number, b: number) => number = function(a: number, b: number): number {
 //     return a * b;
 // };
+
+const logger = (message: string): void => {
+    console.log(message);
+};
+
+const throwError = (message: string): void => {
+    if(!message) {
+        throw new Error(message);
+    }
+}
+
+/**
+ * If we don't have the reachable end point!
+ * @param message
+ */
+const throwErrorNever = (message: string): never => {
+    throw new Error(message);
+    // return "dzfzbzd";
+}
