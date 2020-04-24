@@ -10,3 +10,16 @@ const carsByMake: string[][] = [
     ['car2'],
     ['car3']
 ];
+
+// Help with inference when extracting values
+console.log(carMakes);
+const car1: string = carMakes[0];
+const car2lastCar: string = carMakes.pop();
+
+// Prevent incompatible values
+// carMakes.push(12);
+
+// Help with map
+carMakes.map((car: string): string => {
+    return car;
+})
