@@ -22,4 +22,10 @@ const car2lastCar: string = carMakes.pop();
 // Help with map
 carMakes.map((car: string): string => {
     return car;
-})
+});
+
+// Flexible Types
+const importantDates: (string | Date)[] = [new Date(), '2020-10-2'];
+importantDates.push('2023-12-02');
+importantDates.push(new Date());
+// importantDates.push(20);
