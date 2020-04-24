@@ -1,0 +1,23 @@
+{
+  "name": "udemy-Typescript-The-Complete-Developer-Guide",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/petercagala/udemy-Typescript-The-Complete-Developer-Guide.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/petercagala/udemy-Typescript-The-Complete-Developer-Guide/issues"
+  },
+  "homepage": "https://github.com/petercagala/udemy-Typescript-The-Complete-Developer-Guide#readme",
+  "dependencies": {
+    "axios": "^0.19.2"
+  }
+}
