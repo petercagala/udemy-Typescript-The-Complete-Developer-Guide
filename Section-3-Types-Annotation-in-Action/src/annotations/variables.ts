@@ -54,6 +54,16 @@ const coordinates: { x: number; y: number; } = JSON.parse(json);
 // coordinates.ghdfgxfgzdgdz
 console.log(coordinates);
 
+// 2.) When we split declaration and initialization
+let words = ['red', 'green', 'blue'];
+let foundWorld: boolean;
+
+for (let i = 0; i < words.length; i++) {
+    if(words[i] === "green") {
+        foundWorld = true;
+    }
+}
+
 
 
 
