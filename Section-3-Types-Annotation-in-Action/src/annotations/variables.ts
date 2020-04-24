@@ -48,8 +48,10 @@ const logNumber: (i: number) => void = (i: number) => {
 const json = '{"x": 10, "y": 20}';
 
 // JSON.parse() return 'any' type
-const coordinates = JSON.parse(json);
+// const coordinates: any = JSON.parse(json);
+const coordinates: { x: number; y: number; } = JSON.parse(json);
 
+// coordinates.ghdfgxfgzdgdz
 console.log(coordinates);
 
 
