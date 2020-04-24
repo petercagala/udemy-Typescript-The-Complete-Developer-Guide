@@ -18,6 +18,7 @@
 /Section-2-What-is-a-type-system/.idea/
 /Section-3-Types-Annotation-in-Action/.idea/
 /Section-4-Annotations-with-functions-and-Objects/.idea/
+/Section-5-Mastering-Typed-Arrays/.idea/
 
 #TypeScript
 *.js
