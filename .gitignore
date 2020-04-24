@@ -15,9 +15,8 @@
 *.ini
 /node_modules/
 /Section-1-Getting-Started-with-TypeScript/.idea/
-/Section-1-Getting-Started-with-TypeScript/node_modules/
 /Section-2-What-is-a-type-system/.idea/
-/Section-2-What-is-a-type-system/node_modules/
+/Section-3-Types-Annotation-in-Action/.idea/
 
 #TypeScript
 *.js
