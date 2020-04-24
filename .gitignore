@@ -17,6 +17,7 @@
 /Section-1-Getting-Started-with-TypeScript/.idea/
 /Section-2-What-is-a-type-system/.idea/
 /Section-3-Types-Annotation-in-Action/.idea/
+/Section-4-Annotations-with-functions-and-Objects/.idea/
 
 #TypeScript
 *.js
