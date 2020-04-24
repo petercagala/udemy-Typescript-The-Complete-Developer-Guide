@@ -64,6 +64,19 @@ for (let i = 0; i < words.length; i++) {
     }
 }
 
+// 3) Variable, whose type cannot be inferred correctly
+let numbersArray = [-10, 10, 1];
+// Toto je samozrejme uplna katastrofa mat moznost definovat pre jednu premennu dva rozne typy, ale ide to
+let numberAboveZero: boolean | number = false;
+
+for (let i = 0; i < numbersArray.length; i++) {
+    if(numbersArray[i] > 0) {
+        numberAboveZero = numbersArray[i];
+    } else {
+        numberAboveZero = false;
+    }
+}
+
 
 
 
