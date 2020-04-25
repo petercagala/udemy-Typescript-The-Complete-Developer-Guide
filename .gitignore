@@ -19,6 +19,7 @@
 /Section-3-Types-Annotation-in-Action/.idea/
 /Section-4-Annotations-with-functions-and-Objects/.idea/
 /Section-5-Mastering-Typed-Arrays/.idea/
+/Section-6-Tuples-in-TypeScript/.idea/
 
 #TypeScript
 *.js
