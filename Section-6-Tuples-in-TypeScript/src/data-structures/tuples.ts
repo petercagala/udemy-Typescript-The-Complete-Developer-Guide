@@ -19,3 +19,12 @@ pepsi2.push( 'yellow', false,  50);
 
 console.log(pepsi1);
 console.log(pepsi2);
+
+// with tuples
+const carSpecs1: [number, number] = [400, 54356];
+
+// with object it is significantly better
+const carSpecs2 = {
+    horsePower: 400,
+    weight: 54356,
+};
