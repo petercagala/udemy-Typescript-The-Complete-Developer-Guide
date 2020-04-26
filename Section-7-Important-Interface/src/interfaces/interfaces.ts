@@ -38,6 +38,15 @@ const oldCivic = {
     }
 };
 
+const drink = {
+    color: 'brown',
+    carbonated: true,
+    sugar: 40,
+    summary():string {
+        return `My dring contains ${this.sugar} grams of shugar`;
+    },
+};
+
 /**
  * vehicle ma mat vsetky atributy a metody z interface Vehicle. Teda ak do neho vstupuje objekt,
  * ktory nieje priamo zadefinovany ako Vehicle, podstatne je, ci ma vsetky vlastnosti, co ma mat
@@ -53,3 +62,4 @@ const printSummary = (reportable: Reportable): void => {
 };
 
 printSummary(oldCivic);
+printSummary(drink);
