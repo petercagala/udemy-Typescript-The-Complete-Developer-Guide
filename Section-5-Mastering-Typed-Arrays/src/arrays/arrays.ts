@@ -30,21 +30,16 @@ importantDates.push('2023-12-02');
 importantDates.push(new Date());
 // importantDates.push(20);
 
-// 1 Vytvor novu vetvu feature/release1
-// 2 z nech vytvor dalsiu pomocnu vetvu feature/cagalpte
-// 3 vo vetve feature/cagalpte urob nejake commity, ktore mergni do feature/release1
-// 3.1 merge z feature/cagalpte do feature/release1
-// 4 vo vetve feature/release1 sprav: git rebase --interactive HEAD~nejakeCislo  (fukni tam pocet commitov
+// 1. Vytvor novu vetvu feature/releaseXXX
+// 2. vo vetve feature/releaseXXX urob nejake commity
+// 3. z vetvy feature/releaseXXX sprav novu vetvu feature/releaseXXXwithCommits, kde chces, aby bolo vsetky commity v buducnosti vidiet
+// 4. vo vetve feature/releaseXXX: git rebase --interactive HEAD~nejakeCislo  (fukni tam pocet commitov
 // ktore chces spojit plus este jeden navyse, do ktoreho sa to vsetko spoji)
-// 5 v interaktivnom okne nastav commity, ktore chces do najblizsieho spojit
-// 6 zadaj comment
-// 7 skus tento spojenu commit mergnut do master vetvy, co to spravi, ci budem mat v konecnom dosledku v master
+// 5. v interaktivnom okne nastav commity, ktore chces do najblizsieho spojit
+// 6. zadaj comment
+// 7. skus tento spojeny commit mergnut do master vetvy, co to spravi, ci budem mat v konecnom dosledku v master
 // jeden commit so vsetkymi urobenymi zmenami a zaroven mi ostne vo feature/cagalpte moje ciastkove commity
 
-// change1
-// change2
-
-// release2
 // change1
 // change2
 // change3
