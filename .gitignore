@@ -21,6 +21,7 @@
 /Section-5-Mastering-Typed-Arrays/.idea/
 /Section-6-Tuples-in-TypeScript/.idea/
 /Section-7-Important-Interface/.idea/
+/Section-8-Building-functionality-with-Classes/.idea/
 
 #TypeScript
 *.js
