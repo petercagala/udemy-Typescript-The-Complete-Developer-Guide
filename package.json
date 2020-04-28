@@ -18,6 +18,14 @@
   },
   "homepage": "https://github.com/petercagala/udemy-Typescript-The-Complete-Developer-Guide#readme",
   "dependencies": {
-    "axios": "^0.19.2"
+    "@types/faker": "^4.1.11",
+    "@types/googlemaps": "^3.39.3",
+    "axios": "^0.19.2",
+    "fake": "^0.2.2",
+    "faker": "^4.1.0",
+    "parcel-bundler": "^1.12.4"
+  },
+  "devDependencies": {
+    "typescript": "^3.8.3"
   }
 }
