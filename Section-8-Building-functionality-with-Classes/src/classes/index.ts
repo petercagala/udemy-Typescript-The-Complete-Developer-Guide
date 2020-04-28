@@ -1,6 +1,9 @@
 import {Vehicle} from './Vehicle';
 import {Car} from './Car';
 
-const vehicle: Vehicle = new Car();
+const vehicle: Car = new Car();
 vehicle.drive();
-vehicle.honk();
+
+// we don's see this method as it's private
+// vehicle.honk();
+vehicle.start();
