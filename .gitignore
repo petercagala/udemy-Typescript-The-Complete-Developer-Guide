@@ -22,6 +22,7 @@
 /Section-6-Tuples-in-TypeScript/.idea/
 /Section-7-Important-Interface/.idea/
 /Section-8-Building-functionality-with-Classes/.idea/
+/Section-9-Design-Patterns-in-TypeScript/.idea/
 
 #TypeScript
 *.js
