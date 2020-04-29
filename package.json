@@ -18,6 +18,7 @@
   },
   "homepage": "https://github.com/petercagala/udemy-Typescript-The-Complete-Developer-Guide#readme",
   "dependencies": {
+    "@types/faker": "^4.1.11",
     "axios": "^0.19.2",
     "fake": "^0.2.2",
     "faker": "^4.1.0",

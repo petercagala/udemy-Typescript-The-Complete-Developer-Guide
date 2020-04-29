@@ -1,5 +1,3 @@
-import faker from 'faker';
-
 export class User {
     private _name: string;
 
