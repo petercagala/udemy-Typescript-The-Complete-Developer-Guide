@@ -14,3 +14,8 @@ console.log(user);
 console.log(`variable redColour is: ${redColour}`);
 
 console.log(company);
+
+// we have to help typeScript understand, that 'google' is an global variable
+// npm install @types/googlemaps
+
+google
