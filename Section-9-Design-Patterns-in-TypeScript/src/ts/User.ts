@@ -1,3 +1,5 @@
+import * as faker from "faker";
+
 export class User {
     private _name: string;
 
@@ -25,7 +27,10 @@ export class User {
 
 
     constructor() {
-        // this._name = name;
-        // this._location = location;
+        this._name = faker.name.firstName();
+        this._location = {
+            latitude: parseFloat(faker.address.latitude()),
+            longitude: parseFloat(faker.address.longitude()),
+        };
     }
 }
