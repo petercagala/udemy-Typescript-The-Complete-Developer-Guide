@@ -1,4 +1,5 @@
 import * as faker from "faker";
+import {Location} from './Location';
 
 export const redColour: string = "red";
 
@@ -7,36 +8,46 @@ export const redColour: string = "red";
 export default "green";
 
 export class User {
-    private _name: string;
+    private _firstName: string;
 
-    private _location: {
-        latitude: number;
-        longitude: number;
-    };
+    private _lastName: string;
 
+    private _location: Location;
 
-    get name(): string {
-        return this._name;
+    constructor() {
+        this._firstName = faker.name.firstName();
+        this._lastName = faker.name.lastName();
+        this._location = new Location(
+            parseFloat(faker.address.latitude()),
+            parseFloat(faker.address.longitude())
+        );
     }
 
-    set name(value: string) {
-        this._name = value;
+
+    get firstName(): string {
+        return this._firstName;
     }
 
-    get location(): { latitude: number; longitude: number } {
+    set firstName(value: string) {
+        this._firstName = value;
+    }
+
+    get lastName(): string {
+        return this._lastName;
+    }
+
+    set lastName(value: string) {
+        this._lastName = value;
+    }
+
+    get location(): Location {
         return this._location;
     }
 
-    set location(value: { latitude: number; longitude: number }) {
+    set location(value: Location) {
         this._location = value;
     }
 
 
-    constructor() {
-        this._name = faker.name.firstName();
-        this._location = {
-            latitude: parseFloat(faker.address.latitude()),
-            longitude: parseFloat(faker.address.longitude()),
-        };
-    }
+
 }
