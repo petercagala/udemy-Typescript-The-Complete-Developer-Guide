@@ -1,5 +1,11 @@
 import * as faker from "faker";
 
+export const redColour: string = "red";
+
+// in this case, I'm not going to create the name for tue item I'm goint to export
+// there could be only one default export
+export default "green";
+
 export class User {
     private _name: string;
 
