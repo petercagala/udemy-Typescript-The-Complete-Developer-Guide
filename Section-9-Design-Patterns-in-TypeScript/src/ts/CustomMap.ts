@@ -2,6 +2,7 @@ import {User} from './User';
 import {Company} from "./Company";
 import LatLng = google.maps.LatLng;
 import {Mappable} from "./Mappable";
+import InfoWindow = google.maps.InfoWindow;
 
 export class CustomMap {
     private _googleMap: google.maps.Map;
@@ -26,7 +27,7 @@ export class CustomMap {
         // Ak mappable moze byt aj User aj Company, bude ponukat iba spolocne atributy a metody
         // mappable.
 
-        new google.maps.Marker({
+        const marker: google.maps.Marker = new google.maps.Marker({
                 map: this.googleMap,
                 position: {
                     lat: mappable.location.latitude,
@@ -34,5 +35,15 @@ export class CustomMap {
                 }
             }
         );
+
+        marker.addListener('click', () => {
+            const infoWindow = new google.maps.InfoWindow({
+                content: "Hi there cagalpte!!!"
+            });
+            infoWindow.open(
+                this.googleMap, // in this map
+                marker // on this actual marker
+            )
+        });
     }
 }
