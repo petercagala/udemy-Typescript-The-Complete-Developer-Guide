@@ -21,25 +21,28 @@ export class CustomMap {
         return this._googleMap;
     }
 
-    addUserMarker(user: User): void {
+    addMarker(mappable: User | Company): void {
+        // Ak mappable moze byt aj User aj Company, bude ponukat iba spolocne atributy a metody
+        // mappable.
+
         new google.maps.Marker({
                 map: this.googleMap,
                 position: {
-                    lat: user.location.latitude,
-                    lng: user.location.longitude,
+                    lat: mappable.location.latitude,
+                    lng: mappable.location.longitude,
                 }
             }
         );
     }
 
-    addCompanyMarker(company: Company): void {
-        new google.maps.Marker({
-                map: this.googleMap,
-                position: {
-                    lat: company.location.latitude,
-                    lng: company.location.longitude,
-                }
-            }
-        );
-    }
+    // addCompanyMarker(company: Company): void {
+    //     new google.maps.Marker({
+    //             map: this.googleMap,
+    //             position: {
+    //                 lat: company.location.latitude,
+    //                 lng: company.location.longitude,
+    //             }
+    //         }
+    //     );
+    // }
 }
