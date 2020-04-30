@@ -1,5 +1,6 @@
 import * as faker from "faker";
 import {Location} from './Location';
+import {Mappable} from "./Mappable";
 
 export const redColour: string = "red";
 
@@ -7,7 +8,7 @@ export const redColour: string = "red";
 // there could be only one default export
 export default "green";
 
-export class User {
+export class User implements Mappable {
     private _firstName: string;
 
     private _lastName: string;

@@ -1,7 +1,8 @@
 import * as faker from 'faker';
 import {Location} from './Location';
+import {Mappable} from "./Mappable";
 
-export class Company {
+export class Company implements Mappable {
     private _companyName: string;
 
     private _catchPhrase: string;

@@ -1,6 +1,7 @@
 import {User} from './User';
 import {Company} from "./Company";
 import LatLng = google.maps.LatLng;
+import {Mappable} from "./Mappable";
 
 export class CustomMap {
     private _googleMap: google.maps.Map;
@@ -21,7 +22,7 @@ export class CustomMap {
         return this._googleMap;
     }
 
-    addMarker(mappable: User | Company): void {
+    addMarker(mappable: Mappable): void {
         // Ak mappable moze byt aj User aj Company, bude ponukat iba spolocne atributy a metody
         // mappable.
 
@@ -34,15 +35,4 @@ export class CustomMap {
             }
         );
     }
-
-    // addCompanyMarker(company: Company): void {
-    //     new google.maps.Marker({
-    //             map: this.googleMap,
-    //             position: {
-    //                 lat: company.location.latitude,
-    //                 lng: company.location.longitude,
-    //             }
-    //         }
-    //     );
-    // }
 }
