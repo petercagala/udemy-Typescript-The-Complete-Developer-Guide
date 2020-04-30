@@ -5,5 +5,5 @@ export interface Mappable {
 
      markerContent() : string;
 
-
+     color: string;
 }

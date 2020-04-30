@@ -15,6 +15,8 @@ export class User implements Mappable {
 
     private _location: Location;
 
+    private _color: string = "red";
+
     constructor() {
         this._firstName = faker.name.firstName();
         this._lastName = faker.name.lastName();
@@ -30,6 +32,15 @@ export class User implements Mappable {
                 <h2>User name: ${this._firstName} ${this.lastName}</h2>
             </div>
         `;
+    }
+
+
+    get color(): string {
+        return this._color;
+    }
+
+    set color(value: string) {
+        this._color = value;
     }
 
     get firstName(): string {
