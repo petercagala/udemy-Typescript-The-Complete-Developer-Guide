@@ -25,6 +25,7 @@
 /Section-9-Design-Patterns-in-TypeScript/.idea/
 /Section-9-Design-Patterns-in-TypeScript/src/.cache/
 /Section-9-Design-Patterns-in-TypeScript/src/dist/
+/Section-10-More-and-design-patterns/.idea/
 
 #TypeScript
 *.js
