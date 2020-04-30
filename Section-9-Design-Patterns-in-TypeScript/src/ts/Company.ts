@@ -10,14 +10,22 @@ export class Company implements Mappable {
     private _location: Location;
 
     constructor() {
-        this.companyName = faker.company.companyName();
-        this._companyName = faker.company.catchPhrase();
-        this.location = new Location(
+        this._companyName = faker.company.companyName();
+        this._catchPhrase = faker.company.catchPhrase();
+        this._location = new Location(
             parseFloat(faker.address.latitude()),
             parseFloat(faker.address.longitude())
         )
     }
 
+    markerContent(): string {
+        return `
+            <div>
+                <h2>Company name: ${this.companyName} </h2>
+                <h3>Catch phrase: ${this.catchPhrase}</h3>
+            </div>
+        `;
+    }
 
     get companyName(): string {
         return this._companyName;

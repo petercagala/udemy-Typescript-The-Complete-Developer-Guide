@@ -3,6 +3,7 @@ import {Company} from "./Company";
 import LatLng = google.maps.LatLng;
 import {Mappable} from "./Mappable";
 import InfoWindow = google.maps.InfoWindow;
+import MapCanvasProjection = google.maps.MapCanvasProjection;
 
 export class CustomMap {
     private _googleMap: google.maps.Map;
@@ -38,7 +39,7 @@ export class CustomMap {
 
         marker.addListener('click', () => {
             const infoWindow = new google.maps.InfoWindow({
-                content: "Hi there cagalpte!!!"
+                content: mappable.markerContent(),
             });
             infoWindow.open(
                 this.googleMap, // in this map

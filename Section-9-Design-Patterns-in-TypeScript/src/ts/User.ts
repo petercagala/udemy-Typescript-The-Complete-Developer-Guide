@@ -24,6 +24,13 @@ export class User implements Mappable {
         );
     }
 
+    markerContent(): string {
+        return `
+            <div>
+                <h2>User name: ${this._firstName} ${this.lastName}</h2>
+            </div>
+        `;
+    }
 
     get firstName(): string {
         return this._firstName;
@@ -48,7 +55,6 @@ export class User implements Mappable {
     set location(value: Location) {
         this._location = value;
     }
-
 
 
 }
