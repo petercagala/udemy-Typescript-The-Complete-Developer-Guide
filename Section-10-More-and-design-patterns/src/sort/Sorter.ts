@@ -17,6 +17,19 @@ export class Sorter {
     }
 
     public sort() : void {
+        // vytiahne length automaticky
+        const {length: lengthOfArray} = this.sortCollection;
+
+        for (let i = 0; i < lengthOfArray; i++) {
+            for(let j = 0; j < lengthOfArray - i - 1; j++) {
+                if(this.sortCollection[j] > this.sortCollection[j + 1]) {
+                    const leftHand: number = this.sortCollection[j];
+                    this.sortCollection[j] = this.sortCollection[j+1];
+                    this.sortCollection[j+1] = leftHand;
+                }
+            }
+        }
+
 
     }
 }
