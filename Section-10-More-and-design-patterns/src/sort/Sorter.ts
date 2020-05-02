@@ -1,24 +1,25 @@
-import {NumbersCollection} from "./NumbersCollection";
+import {NumbersCollection} from "./sortable/NumbersCollection";
+import {Sortable} from "./sortable/Sortable";
 
 export class Sorter {
-    private _sortCollection: NumbersCollection;
+    private _sortCollection: Sortable;
 
 
-    constructor(sortCollection: NumbersCollection) {
+    constructor(sortCollection: Sortable) {
         this._sortCollection = sortCollection;
     }
 
-    get sortCollection(): NumbersCollection {
+    get sortCollection(): Sortable {
         return this._sortCollection;
     }
 
-    set sortCollection(value: NumbersCollection) {
+    set sortCollection(value: Sortable) {
         this._sortCollection = value;
     }
 
     public sort() : void {
         // vytiahne length automaticky
-        const lengthOfArray = this.sortCollection.length;
+        const lengthOfArray = this.sortCollection.getLength();
 
         for (let i = 0; i < lengthOfArray; i++) {
             for(let j = 0; j < lengthOfArray - i - 1; j++) {

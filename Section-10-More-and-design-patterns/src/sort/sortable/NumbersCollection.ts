@@ -1,5 +1,6 @@
+import {Sortable} from "./Sortable";
 
-export class NumbersCollection {
+export class NumbersCollection implements Sortable {
     private _data: number[];
 
     constructor(data: number[]) {
@@ -24,7 +25,7 @@ export class NumbersCollection {
         this.data[rightIndex] = leftHand;
     }
 
-    get length(): number {
+    getLength(): number {
        return this.data.length;
     }
 }
