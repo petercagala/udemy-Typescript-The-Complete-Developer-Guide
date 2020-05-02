@@ -1,45 +1,30 @@
-
+import {NumbersCollection} from "./NumbersCollection";
 
 export class Sorter {
-    private _sortCollection: number[] | string;
+    private _sortCollection: NumbersCollection;
 
 
-    constructor(sortCollection: number[] | string) {
+    constructor(sortCollection: NumbersCollection) {
         this._sortCollection = sortCollection;
     }
 
-    get sortCollection(): number[] | string {
+    get sortCollection(): NumbersCollection {
         return this._sortCollection;
     }
 
-    set sortCollection(value: number[] | string) {
+    set sortCollection(value: NumbersCollection) {
         this._sortCollection = value;
     }
 
     public sort() : void {
         // vytiahne length automaticky
-        const {length: lengthOfArray} = this.sortCollection;
+        const lengthOfArray = this.sortCollection.length;
 
         for (let i = 0; i < lengthOfArray; i++) {
             for(let j = 0; j < lengthOfArray - i - 1; j++) {
-
-                // if collection is type of array numbers
-                // Type guard: this.sortCollection instanceof Array
-                if(this.sortCollection instanceof Array) {
-                    if(this.sortCollection[j] > this.sortCollection[j + 1]) {
-                        const leftHand: number = this.sortCollection[j];
-                        this.sortCollection[j] = this.sortCollection[j+1];
-                        this.sortCollection[j+1] = leftHand;
-                    }
+                if(this.sortCollection.compare(j)) {
+                    this.sortCollection.swap(j);
                 }
-
-                // if collection is type of string
-                // Type guard: typeof this.sortCollection === 'string'
-                if(typeof this.sortCollection === 'string') {
-
-                }
-
-
             }
         }
 

@@ -1,6 +1,7 @@
 import {Sorter} from './sort/Sorter';
+import {NumbersCollection} from "./sort/NumbersCollection";
 
-const sorter: Sorter = new Sorter([10, 3, -5, 0]);
-sorter.sort();
+const sorterNumberArray: Sorter = new Sorter(new NumbersCollection([300,150, 10, 3, -5, 0]));
+sorterNumberArray.sort();
 
-console.log(sorter.sortCollection);
+console.log(sorterNumberArray.sortCollection);
