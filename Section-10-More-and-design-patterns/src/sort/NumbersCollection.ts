@@ -14,14 +14,14 @@ export class NumbersCollection {
         this._data = value;
     }
 
-    compare(leftIndex: number): boolean {
-        return this.data[leftIndex] > this.data[leftIndex + 1];
+    compare(leftIndex: number, rightIndex: number): boolean {
+        return this.data[leftIndex] > this.data[rightIndex];
     }
 
-    swap(leftIndex: number): void {
+    swap(leftIndex: number, rightIndex: number): void {
         const leftHand: number = this.data[leftIndex];
-        this.data[leftIndex] = this.data[leftIndex+1];
-        this.data[leftIndex+1] = leftHand;
+        this.data[leftIndex] = this.data[rightIndex];
+        this.data[rightIndex] = leftHand;
     }
 
     get length(): number {

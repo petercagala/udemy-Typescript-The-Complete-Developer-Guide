@@ -22,8 +22,8 @@ export class Sorter {
 
         for (let i = 0; i < lengthOfArray; i++) {
             for(let j = 0; j < lengthOfArray - i - 1; j++) {
-                if(this.sortCollection.compare(j)) {
-                    this.sortCollection.swap(j);
+                if(this.sortCollection.compare(j, j+1)) {
+                    this.sortCollection.swap(j, j +1);
                 }
             }
         }
