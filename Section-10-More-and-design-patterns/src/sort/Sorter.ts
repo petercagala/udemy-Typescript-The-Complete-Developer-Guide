@@ -1,40 +1,26 @@
 import {NumbersCollection} from "./sortable/NumbersCollection";
 import {Sortable} from "./sortable/Sortable";
 
-export class Sorter {
-    private _sortCollection: Sortable;
-
-
-    constructor(sortCollection: Sortable) {
-        this._sortCollection = sortCollection;
-    }
-
-    get sortCollection(): Sortable {
-        return this._sortCollection;
-    }
-
-    set sortCollection(value: Sortable) {
-        this._sortCollection = value;
-    }
+export abstract class Sorter implements Sortable {
 
     public sort() : void {
         // vytiahne length automaticky
-        const lengthOfArray = this.sortCollection.getLength();
+        const lengthOfArray = this.getLength();
 
         for (let i = 0; i < lengthOfArray; i++) {
             for(let j = 0; j < lengthOfArray - i - 1; j++) {
-                if(this.sortCollection.compare(j, j+1)) {
-                    this.sortCollection.swap(j, j +1);
+                if(this.compare(j, j+1)) {
+                    this.swap(j, j +1);
                 }
             }
         }
-
-
-
-
-
-
-
-
     }
+
+    abstract compare(leftIndex: number, rightIndex: number): boolean;
+
+    abstract getLength(): number;
+
+    abstract swap(leftIndex: number, rightIndex: number): void;
+
+
 }

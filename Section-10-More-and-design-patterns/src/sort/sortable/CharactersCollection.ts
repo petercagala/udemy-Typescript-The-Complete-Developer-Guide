@@ -1,10 +1,12 @@
 import {Sortable} from "./Sortable";
+import {Sorter} from "../Sorter";
 
-export class CharactersCollection implements Sortable {
+export class CharactersCollection extends Sorter {
 
     private _data: string;
 
     constructor(data: string) {
+        super();
         this._data = data;
     }
 
