@@ -6,7 +6,7 @@ ReactDOM.render(
     // <React.StrictMode>
     //     <App/>
     // </React.StrictMode>,
-    <App/>,
+    <App color="red"/>,
     // document.getElementById('root')
     document.querySelector("#root")
 );
