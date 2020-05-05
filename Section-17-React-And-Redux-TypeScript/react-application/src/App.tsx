@@ -1,15 +1,37 @@
 import React from 'react';
-import {AppState} from './AppState';
 
+// Props
 interface AppProps {
     // with optional ? is the color property optional, is not mandatory
     color?: string;
 }
 
+// State
+interface AppState {
+    counter: number;
+}
 
-class App extends React.Component<AppProps> {
-    state: AppState = {
-        counter: 0,
+/**
+ * Musis zadefinovat React.Component<> genericke typy pre:
+ * Props:
+ * State:
+ */
+class App extends React.Component<AppProps, AppState> {
+    /**
+     * We were redefining state property, which was set up at React.Component<AppProps, AppState>
+     * @param props
+     */
+    // state: AppState = {
+    //     counter: 0,
+    // }
+
+    constructor(props: AppProps) {
+        super(props);
+
+        // In this case, we have to define the state type in generic definition React.Component<AppProps, AppState>
+        this.state = {
+            counter: 0,
+        }
     }
 
 
