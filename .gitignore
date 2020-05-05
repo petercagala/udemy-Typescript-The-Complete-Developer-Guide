@@ -27,6 +27,8 @@
 /Section-9-Design-Patterns-in-TypeScript/src/dist/
 /Section-10-More-and-design-patterns/.idea/
 /Section-10-More-and-design-patterns/build/
+/Section11-Reusable-Code/.idea/
+/Section11-Reusable-Code/build/
 
 #TypeScript
 *.js
