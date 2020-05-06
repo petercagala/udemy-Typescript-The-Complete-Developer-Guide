@@ -1,4 +1,4 @@
-import {Todo, Action, ActionTypes} from '../actions/index';
+import {Action, ActionTypes, Todo} from '../actions/index';
 
 /**
  * Kedze todosReducer volame z redux --> combineReducers, tato metoda sa zavola a injectne
@@ -9,9 +9,13 @@ import {Todo, Action, ActionTypes} from '../actions/index';
 export const todosReducer = (state: Todo[] = [],
                              action: Action
 ): Todo[] => {
+
+
     switch (action.type) {
         case ActionTypes.fetchTodos:
             return action.payload;
+        case ActionTypes.deleteTodo:
+            return state.filter((todo: Todo): boolean => todo.id !== action.payload);
         default:
             return state;
     }
