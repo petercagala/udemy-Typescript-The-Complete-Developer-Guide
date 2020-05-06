@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import App from './component/App';
+import {App} from './component/App';
 import {createStore, applyMiddleware} from 'redux';
 import {Provider} from 'react-redux';
 import thunk from 'redux-thunk';
@@ -14,7 +14,7 @@ ReactDOM.render(
     //     <App/>
     // </React.StrictMode>,
     <Provider store = {store}>
-        <App color="red"/>
+        <App/>
     </Provider>,
     // document.getElementById('root')
     document.querySelector("#root")
