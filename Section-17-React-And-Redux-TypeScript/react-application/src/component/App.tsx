@@ -1,46 +1,15 @@
 import React from 'react';
+import {connect} from 'react-redux';
+import {Todo, fetchTodos} from '../actions/index';
+import {StoreState} from '../reducers/index';
 
 // Props
 interface AppProps {
-    // with optional ? is the color property optional, is not mandatory
-    color?: string;
+    todos: Todo[];
+    fetchTodos(): any;
 }
 
-// State
-interface AppState {
-    counter: number;
-}
-
-/**
- * Definition as FUNCTIONAL COMPONENT
- * @constructor
- */
-// const App = (props: AppProps): JSX.Element => {
-//
-//
-//     return (
-//         <div>
-//             {props.color}
-//         </div>
-//     );
-// }
-
-
-//
-// /**
-//  * Definition as CLASS COMPONENT
-//  * Musis zadefinovat React.Component<> genericke typy pre:
-//  * Props:
-//  * State:
-//  */
-class App extends React.Component<AppProps, AppState> {
-    /**
-     * We were redefining state property, which was set up at React.Component<AppProps, AppState>
-     * @param props
-     */
-    // state: AppState = {
-    //     counter: 0,
-    // }
+class _App extends React.Component<AppProps> {
 
     constructor(props: AppProps) {
         super(props);
@@ -52,28 +21,23 @@ class App extends React.Component<AppProps, AppState> {
     }
 
 
-    private handleIncrement = (): void => {
-        this.setState({
-            counter: this.state.counter + 1,
-        })
-    };
-
-    private handleDecrement = (): void => {
-        this.setState({
-            counter: this.state.counter - 1,
-        })
-    }
-
     render() {
         return (
             <div>
-                <button onClick={this.handleIncrement}>Increment</button>
-                <button onClick={this.handleDecrement}>Decrement</button>
-                <br/>
-                {this.state.counter}
+
             </div>
         );
     }
+}
+
+const mapStateToProps = (state: StoreState): {todos: Todo[]} => {
+    return {
+        todos: state.todos,
+    };
 };
 
-export default App;
+export const App = connect(
+    mapStateToProps,
+    {fetchTodos}
+)(_App);
+
