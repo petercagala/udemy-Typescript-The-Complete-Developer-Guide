@@ -1,5 +1,4 @@
-import {Todo, FetchTodosAction} from '../actions/index';
-import {ActionTypes} from '../actions/types'
+import {Todo, FetchTodosAction, ActionTypes} from '../actions/index';
 
 /**
  * Kedze todosReducer volame z redux --> combineReducers, tato metoda sa zavola a injectne
