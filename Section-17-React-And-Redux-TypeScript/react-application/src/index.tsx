@@ -14,7 +14,7 @@ ReactDOM.render(
     //     <App/>
     // </React.StrictMode>,
     <Provider store = {store}>
-        <App/>
+        <App />
     </Provider>,
     // document.getElementById('root')
     document.querySelector("#root")

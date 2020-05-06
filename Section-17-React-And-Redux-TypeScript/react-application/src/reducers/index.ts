@@ -8,7 +8,6 @@ export interface StoreState {
     todos: Todo[];
 }
 
-// let's create dummy reducer only.
 export const reducers = combineReducers<StoreState>({
     todos: todosReducer,
 });
