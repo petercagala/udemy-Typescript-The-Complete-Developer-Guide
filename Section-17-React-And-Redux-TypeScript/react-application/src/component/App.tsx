@@ -2,7 +2,6 @@ import React from 'react';
 import {connect} from 'react-redux';
 import {Todo, fetchTodos} from '../actions/index';
 import {StoreState} from '../reducers/index';
-import {Dispatch} from "redux";
 
 // Props
 interface AppProps {
@@ -12,21 +11,29 @@ interface AppProps {
 
 class _App extends React.Component<AppProps> {
 
-
-    /**
-     * Pozor, toto je nakazene prepisana metoda a vola sa vzdy, ked sa zavola komponent
-     */
-    componentDidMount(): void {
+    private handleOnButtonClick = ():void => {
         this.props.fetchTodos();
+    };
+
+    renderList(): JSX.Element[] {
+        return this.props.todos.map<JSX.Element>((todo: Todo): JSX.Element => {
+            return (
+              <div key={todo.id}>
+                  {todo.title}
+              </div>
+            );
+        });
     }
+
 
     render() {
 
-        console.log(this.props.todos);
-
         return (
             <div>
-                <h2>Hi Peter</h2>
+                <button onClick={this.handleOnButtonClick}>
+                    Fetch
+                </button>
+                {this.renderList()}
             </div>
         );
     }
