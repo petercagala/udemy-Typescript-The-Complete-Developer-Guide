@@ -1,4 +1,4 @@
-import {Todo, FetchTodosAction, ActionTypes} from '../actions/index';
+import {Todo, Action, ActionTypes} from '../actions/index';
 
 /**
  * Kedze todosReducer volame z redux --> combineReducers, tato metoda sa zavola a injectne
@@ -7,7 +7,7 @@ import {Todo, FetchTodosAction, ActionTypes} from '../actions/index';
  * @param action
  */
 export const todosReducer = (state: Todo[] = [],
-                             action: FetchTodosAction
+                             action: Action
 ): Todo[] => {
     switch (action.type) {
         case ActionTypes.fetchTodos:
