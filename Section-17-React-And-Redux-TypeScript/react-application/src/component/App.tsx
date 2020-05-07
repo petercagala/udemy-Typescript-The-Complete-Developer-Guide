@@ -12,13 +12,38 @@ interface AppProps {
     deleteAllTodos: typeof deleteAllTodos;
 }
 
-class _App extends React.Component<AppProps> {
+//State
+interface AppState {
+    fetching: boolean;
+}
 
-    private handleOnButtonClick = ():void => {
+class _App extends React.Component<AppProps, AppState> {
+
+    constructor(props: AppProps, state: AppState) {
+        super(props);
+
+        this.state = {
+            fetching: false,
+        };
+    }
+
+    componentDidUpdate(prevProps: Readonly<AppProps>, prevState: Readonly<AppState>, snapshot?: any) {
+        if(!prevProps.todos.length && this.props.todos.length) {
+            this.setState({
+                fetching: false,
+            })
+        }
+    }
+
+    private handleOnButtonClickFetching = ():void => {
         this.props.fetchTodos();
+
+        this.state = {
+            fetching: true,
+        }
     };
 
-    private handleOnTodoClick = (id: number): void => {
+    private handleOnTodoClickDelete = (id: number): void => {
         this.props.deleteTodo(id);
     }
 
@@ -29,7 +54,7 @@ class _App extends React.Component<AppProps> {
     private renderList(): JSX.Element[] {
         return this.props.todos.map<JSX.Element>((todo: Todo): JSX.Element => {
             return (
-              <div key={todo.id} onClick={(e) => this.handleOnTodoClick(todo.id)}>
+              <div key={todo.id} onClick={(e) => this.handleOnTodoClickDelete(todo.id)}>
                   <ul>
                       <li>{todo.id}</li>
                       <li>{todo.title}</li>
@@ -47,9 +72,10 @@ class _App extends React.Component<AppProps> {
                 <button onClick={(e) => {this.handleOnButtonDeleteAll()}}>
                     Delete all
                 </button>
-                <button onClick={(e) => this.handleOnButtonClick()}>
+                <button onClick={(e) => this.handleOnButtonClickFetching()}>
                     Fetch
                 </button>
+                {this.state.fetching ? "Loading" : null}
                 {this.renderList()}
             </div>
         );
