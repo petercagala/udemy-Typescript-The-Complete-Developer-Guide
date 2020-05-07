@@ -20,7 +20,7 @@ export interface DeleteTodoAction {
 
 const url = "https://jsonplaceholder.typicode.com/todos";
 
-export const fetchTodos  = (): (dispatch: Dispatch) => Promise<void> => {
+export const fetchTodos  = (): Function  => {
 
     console.log("I'm in fetchTodos");
 
@@ -37,6 +37,6 @@ export const fetchTodos  = (): (dispatch: Dispatch) => Promise<void> => {
 export const deleteTodo = (id: number): DeleteTodoAction => {
     return {
         type: ActionTypes.deleteTodo,
-        payload: id
+        payload: id,
     }
-}
+};

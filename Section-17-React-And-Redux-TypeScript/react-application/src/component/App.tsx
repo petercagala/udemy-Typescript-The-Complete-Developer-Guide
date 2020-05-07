@@ -1,7 +1,8 @@
 import React from 'react';
 import {connect} from 'react-redux';
-import {Todo, fetchTodos, deleteTodo} from '../actions/index';
+import {Todo, fetchTodos, deleteTodo, DeleteTodoAction} from '../actions/index';
 import {StoreState} from '../reducers/index';
+import {Dispatch} from "redux";
 
 // Props
 interface AppProps {
