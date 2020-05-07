@@ -6,6 +6,7 @@ import {FetchTodosAction, DeleteTodoAction} from './index';
 export enum ActionTypes {
     fetchTodos,
     deleteTodo,
+    deleteAllTodos,
 }
 
 

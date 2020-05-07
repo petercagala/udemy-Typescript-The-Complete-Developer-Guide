@@ -1,6 +1,6 @@
 import React from 'react';
 import {connect} from 'react-redux';
-import {Todo, fetchTodos, deleteTodo, DeleteTodoAction} from '../actions/index';
+import {Todo, fetchTodos, deleteTodo, DeleteTodoAction, deleteAllTodos} from '../actions/index';
 import {StoreState} from '../reducers/index';
 import {Dispatch} from "redux";
 
@@ -9,6 +9,7 @@ interface AppProps {
     todos: Todo[];
     fetchTodos: typeof fetchTodos;
     deleteTodo: typeof deleteTodo;
+    deleteAllTodos: typeof deleteAllTodos;
 }
 
 class _App extends React.Component<AppProps> {
@@ -21,7 +22,11 @@ class _App extends React.Component<AppProps> {
         this.props.deleteTodo(id);
     }
 
-    renderList(): JSX.Element[] {
+    private handleOnButtonDeleteAll = (): void => {
+        this.props.deleteAllTodos();
+    }
+
+    private renderList(): JSX.Element[] {
         return this.props.todos.map<JSX.Element>((todo: Todo): JSX.Element => {
             return (
               <div key={todo.id} onClick={(e) => this.handleOnTodoClick(todo.id)}>
@@ -39,6 +44,9 @@ class _App extends React.Component<AppProps> {
 
         return (
             <div>
+                <button onClick={(e) => {this.handleOnButtonDeleteAll()}}>
+                    Delete all
+                </button>
                 <button onClick={(e) => this.handleOnButtonClick()}>
                     Fetch
                 </button>
@@ -67,6 +75,6 @@ const mapStateToProps = (state: StoreState): {todos: Todo[]} => {
  */
 export const App = connect(
     mapStateToProps, // todos
-    {fetchTodos, deleteTodo }
+    {fetchTodos, deleteTodo, deleteAllTodos }
 )(_App);
 

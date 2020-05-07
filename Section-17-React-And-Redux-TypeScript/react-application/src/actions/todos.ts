@@ -1,7 +1,7 @@
 import axios, {AxiosResponse} from 'axios';
 import {Dispatch} from 'redux';
 import {ActionTypes} from './types';
-import {DeleteTodoAction, FetchTodosAction, Todo} from "./index";
+import {DeleteTodoAction,  DeleteAllTodosAction, FetchTodosAction, Todo} from "./index";
 
 
 
@@ -43,6 +43,14 @@ export const deleteTodo = (id: number): Function => {
             payload: id,
         });
     }
-
-
 };
+
+export const deleteAllTodos = (): Function => {
+    return (dispatch: Dispatch): void => {
+
+        dispatch<DeleteAllTodosAction>({
+            type: ActionTypes.deleteAllTodos,
+            reason: "Lebo to tak je",
+        });
+    }
+}

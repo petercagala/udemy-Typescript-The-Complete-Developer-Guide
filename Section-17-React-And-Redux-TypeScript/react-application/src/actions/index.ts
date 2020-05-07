@@ -1,7 +1,8 @@
-import {ActionTypes} from "./types";
+import {ActionTypes,} from "./types";
+import {AnyAction} from "redux";
 
 export {ActionTypes} from './types';
-export {fetchTodos, deleteTodo} from './todos';
+export {fetchTodos, deleteTodo, deleteAllTodos} from './todos';
 
 export interface Todo {
     id: number;
@@ -9,16 +10,21 @@ export interface Todo {
     completed: boolean;
 }
 
-export interface FetchTodosAction {
+export interface FetchTodosAction extends AnyAction {
     type: ActionTypes.fetchTodos;
     payload: Todo[];
 }
 
-export interface DeleteTodoAction {
+export interface DeleteTodoAction extends AnyAction {
     type: ActionTypes.deleteTodo;
     payload: number;
 }
 
-export type Action = FetchTodosAction | DeleteTodoAction;
+export interface DeleteAllTodosAction extends AnyAction {
+    type: ActionTypes.deleteAllTodos;
+    reason: string;
+}
+
+export type Action = FetchTodosAction | DeleteTodoAction | DeleteAllTodosAction;
 
 
