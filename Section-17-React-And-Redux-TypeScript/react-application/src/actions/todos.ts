@@ -21,9 +21,28 @@ export const fetchTodos  = (): Function  => {
     }
 };
 
-export const deleteTodo = (id: number): DeleteTodoAction => {
-    return {
-        type: ActionTypes.deleteTodo,
-        payload: id,
+// export const deleteTodo = (id: number): DeleteTodoAction => {
+//     return {
+//         type: ActionTypes.deleteTodo,
+//         payload: id,
+//     }
+// };
+
+/**
+ * Mame 2 sposoby
+ * 1. Vratime DeleteTodoAction, s ktorym vie reducer priamo pracovat a injectne sa do spracujucej funkcie reducera
+ * 2. Pouzijeme priamo Dispatch reduxu, cim injectujeme opat DeleteTodoAction do spracovavanej funkcie reducera
+ * @param id
+ */
+export const deleteTodo = (id: number): Function => {
+
+    return (dispatch: Dispatch): void => {
+
+        dispatch<DeleteTodoAction>({
+            type: ActionTypes.deleteTodo,
+            payload: id,
+        });
     }
+
+
 };

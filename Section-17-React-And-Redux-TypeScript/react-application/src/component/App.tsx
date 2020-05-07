@@ -25,7 +25,10 @@ class _App extends React.Component<AppProps> {
         return this.props.todos.map<JSX.Element>((todo: Todo): JSX.Element => {
             return (
               <div key={todo.id} onClick={(e) => this.handleOnTodoClick(todo.id)}>
-                  {todo.title}
+                  <ul>
+                      <li>{todo.id}</li>
+                      <li>{todo.title}</li>
+                  </ul>
               </div>
             );
         });
