@@ -57,9 +57,9 @@ const mapStateToProps = (state: StoreState): {todos: Todo[]} => {
 
 /**
  * cez connect sa krasne naplni AppProps
- * interface AppProps {
-    todos: Todo[];
-    fetchTodos(): any;
+ * 1. pomocou tu vytvorenej samostanej funkcie (mimo _App), ktora namapuje potrebne atributy zo statu do props
+ * 2. Dalsie funkcie idealne z actions, ktore namapuju propsove odkazy na tieto funkcie. Propsove odkazy na funkcie
+ * z actions musia mat samozrejme ten isty nazov, aby sa to vedelo automaticky premapovat
 }
  */
 export const App = connect(
