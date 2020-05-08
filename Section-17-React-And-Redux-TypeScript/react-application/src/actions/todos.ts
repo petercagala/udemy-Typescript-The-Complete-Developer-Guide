@@ -7,17 +7,30 @@ import {DeleteTodoAction,  DeleteAllTodosAction, FetchTodosAction, Todo} from ".
 
 const url = "https://jsonplaceholder.typicode.com/todos";
 
+let scheduled = false;
+
 export const fetchTodos  = (): Function  => {
 
-    console.log("I'm in fetchTodos");
+    return (dispatch: Dispatch) => {
 
-    return async (dispatch: Dispatch) => {
-        const response: AxiosResponse<Todo[]> = await axios.get<Todo[]>(url);
+        // throttling: nastav umely timing pre volanie servera
+        if(!scheduled) {
+            scheduled = true;
 
-        dispatch<FetchTodosAction>({
-            type: ActionTypes.fetchTodos,
-            payload: response.data,
-        })
+            window.setTimeout( async () => {
+                    let response: AxiosResponse<Todo[]> = await axios.get<Todo[]>(url);
+
+                    dispatch<FetchTodosAction>({
+                        type: ActionTypes.fetchTodos,
+                        payload: response.data,
+                    });
+                    // Ked je vsetko za nami, tak mozeme naspat nastavit na false
+                    scheduled = false;
+                },
+                1000);
+
+
+        }
     }
 };
 
