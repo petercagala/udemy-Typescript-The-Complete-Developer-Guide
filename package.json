@@ -20,7 +20,7 @@
   "dependencies": {
     "@types/faker": "^4.1.11",
     "@types/googlemaps": "^3.39.3",
-    "axios": "^0.19.2",
+    "axios": "^0.21.1",
     "concurrently": "^5.2.0",
     "fake": "^0.2.2",
     "faker": "^4.1.0",
